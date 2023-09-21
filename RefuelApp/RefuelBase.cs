@@ -10,8 +10,18 @@
             this.Name = name;
         }
         public string Name {get; private set ;}
-        public abstract void AddDistance(float data);
-        public abstract void AddDistance(string data);
+        public abstract void AddDistance(float distance);
+        public void AddDistance(string distance)
+        {
+            if (float.TryParse(distance, out float result))
+            {
+                this.AddDistance(result);
+            }
+            else
+            {
+                throw new Exception("Bed value ");
+            }
+        }
         public abstract Statistics GetStatistics(); 
     }
 }

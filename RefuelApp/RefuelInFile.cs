@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace RefuelApp
+﻿namespace RefuelApp
 {
     public class RefuelInFile : RefuelBase
     {
@@ -28,18 +26,6 @@ namespace RefuelApp
                 {
                     throw new Exception("Outside the range traveled 250 - 2500 Km");
                 }
-            }
-        }
-
-        public override void AddDistance(string distance)
-        {
-            if (float.TryParse(distance, out float result))
-            {
-                this.AddDistance(result);
-            }
-            else
-            {
-                throw new Exception("Bed value ");
             }
         }
 

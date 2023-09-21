@@ -5,8 +5,8 @@ namespace RefuelApp
     public interface IRefuel
     {
         string Name { get; }
-        void AddDistance(float data);
-        void AddDistance(string data);
+        void AddDistance(float distance);
+        void AddDistance(string distance);
         Statistics GetStatistics();
         event DistanceAddDelegate DistanceAdded;
     }

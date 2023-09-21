@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace RefuelApp
+﻿namespace RefuelApp
 {
     public class RefuelInMemory : RefuelBase
     {
@@ -27,23 +25,12 @@ namespace RefuelApp
             }
         }
 
-        public override void AddDistance(string distance)
-        {
-            if (float.TryParse(distance, out float result))
-            {
-                this.AddDistance(result);
-            }
-            else
-            {
-                throw new Exception("Bed value ");
-            }
-        }
         public override Statistics GetStatistics()
         {
             var statistic = new Statistics();
-            foreach (var data in this.distances)
+            foreach (var distance in this.distances)
             {
-                statistic.AddDistance(data);
+                statistic.AddDistance(distance);
             }
         return statistic;
         }
